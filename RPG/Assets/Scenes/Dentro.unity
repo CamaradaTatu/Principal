@@ -460,7 +460,7 @@ MonoBehaviour:
     value: 1
   itemInInv:
   - id: 0
-    count: 1
+    count: 0
     mutiplicador: 1
   - id: 1
     count: 0
@@ -639,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471597362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -801,10 +801,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -828,15 +828,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4636281994570734471, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3615044951219507306, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
       propertyPath: m_Name
       value: Main Camera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636281994570734471, guid: a88d73eae3854174094641175d58ddba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3615044951219507305, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
@@ -1954,6 +1954,6 @@ PrefabInstance:
         type: 3}
       propertyPath: "telaConstru\xE7\xE3o"
       value: 
-      objectReference: {fileID: 163834282}
+      objectReference: {fileID: 471597361}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8acfa04b7e42bb1498fb313b92786460, type: 3}
