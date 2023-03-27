@@ -375,31 +375,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.015136719
       objectReference: {fileID: 0}
-    - target: {fileID: 2781779761017004466, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1072765417864975534, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541757680666403138, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.4433962
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541757680666403138, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.37019402
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541757680666403138, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.37019402
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88d73eae3854174094641175d58ddba, type: 3}
 --- !u!1 &561595224
@@ -7970,7 +7945,7 @@ PrefabInstance:
     - target: {fileID: 8933389838046866214, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
       propertyPath: orthographic size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8933389838046866214, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
@@ -8000,22 +7975,23 @@ PrefabInstance:
     - target: {fileID: 8933389838046866214, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.32800817
+      value: 0.6997597
       objectReference: {fileID: 0}
     - target: {fileID: 8933389838046866214, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.3679245
+      value: 0.7038448
       objectReference: {fileID: 0}
     - target: {fileID: 8933389838046866214, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.32800817
+      value: 0.8018868
       objectReference: {fileID: 0}
     - target: {fileID: 8933389838046866213, guid: 46ca1bcbfdc1e244792b1012b0e8947e,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1140399089}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8933389838046866213, guid: 46ca1bcbfdc1e244792b1012b0e8947e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 46ca1bcbfdc1e244792b1012b0e8947e, type: 3}
