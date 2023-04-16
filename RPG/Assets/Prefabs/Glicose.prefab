@@ -95,5 +95,4 @@ MonoBehaviour:
   id: 0
   count: 1
   mutiplicador: 1
-  imagemDoItem: {fileID: 21300000, guid: 46598a9175aa83342b5271c1828be4e5, type: 3}
   distance: 1

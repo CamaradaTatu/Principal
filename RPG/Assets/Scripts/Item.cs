@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class Item : MonoBehaviour
     public int id;
     public int count;
     public int mutiplicador;
-    public Sprite imagemDoItem;
 
     private Char Char;
     private Inventory inv;
@@ -31,7 +29,7 @@ public class Item : MonoBehaviour
         if (Vector2.Distance(Char.transform.position, transform.position) < distance)
         {            
             
-            inv.addItem(id, count, mutiplicador,imagemDoItem);
+            inv.addItem(id, count, mutiplicador);
             Destroy(gameObject);            
         }
     }
