@@ -26,6 +26,7 @@ public class itemInInv
     public int id;
     public int count;
     public int mutiplicador;
+    public Sprite imagemDoItem;
 }
 
 public class Inventory : MonoBehaviour
@@ -40,7 +41,8 @@ public class Inventory : MonoBehaviour
     public GameObject invScene;
     public Text itens;
     public Text description;
-    
+    public ItemBG ItemBG;
+
 
     private List<string> itensToShow = new List<string>();
     private int selected;
@@ -52,7 +54,7 @@ public class Inventory : MonoBehaviour
         persoa = GetComponent<Char>();
     }
 
-    public void addItem(int id, int count, int mutiplicador)
+    public void addItem(int id, int count, int mutiplicador, Sprite imagem)
     {
         bool t = false;
         for (int i = 0; i < itemInInv.Count; i++)
@@ -70,6 +72,7 @@ public class Inventory : MonoBehaviour
             iii.id = id;
             iii.mutiplicador = mutiplicador;
             iii.count = count*mutiplicador;
+            iii.imagemDoItem = imagem;
 
             itemInInv.Add(iii);
         }
@@ -158,18 +161,29 @@ public class Inventory : MonoBehaviour
     {
         if (opened)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
+            int itembgpointer = ItemBG.animator.GetInteger("TargetItem");
+            
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
                 if (selected > 0)
                 {
                     selectedItem(-1);
+                    ItemBG.animator.SetInteger("TargetItem",itembgpointer-1);
+                    ItemBG.animator.SetFloat("Direção",-1f);
+                    
+                    
+
                 }
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (selected < itensToShow.Count-1)
                 {
                     selectedItem(+1);
+                    ItemBG.animator.SetInteger("TargetItem", itembgpointer+1);
+                    ItemBG.animator.SetFloat("Direção", 1f);
+                    
+
                 }
             }
             
