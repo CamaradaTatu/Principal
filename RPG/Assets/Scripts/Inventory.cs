@@ -33,6 +33,7 @@ public class Inventory : MonoBehaviour
 {
 
     public List<item> ItemsDB = new List<item>();
+    public List<ItemImage> itemImages = new List<ItemImage>();
 
     [Header("Player")]
     public List<itemInInv> itemInInv = new List<itemInInv>();
@@ -52,6 +53,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         persoa = GetComponent<Char>();
+
     }
 
     public void addItem(int id, int count, int mutiplicador, Sprite imagem)
@@ -63,7 +65,7 @@ public class Inventory : MonoBehaviour
             {
                 itemInInv[i].count += count*mutiplicador;
                 t = true;
-                break;
+                break;               
             }
         }
         if (t == false)
@@ -143,6 +145,7 @@ public class Inventory : MonoBehaviour
             for (int i = 0; i < itemInInv.Count; i++)
             {
                 int id = itemInInv[i].id;
+                itemImages[i].ItemInvsprite = itemInInv[i].imagemDoItem;
                 if (i == 0)
                     itensToShow.Add("> " + ItemsDB[id].name + " / " + itemInInv[i].count);
                 else
@@ -161,6 +164,7 @@ public class Inventory : MonoBehaviour
     {
         if (opened)
         {
+            
             int itembgpointer = ItemBG.animator.GetInteger("TargetItem");
             
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -170,9 +174,6 @@ public class Inventory : MonoBehaviour
                     selectedItem(-1);
                     ItemBG.animator.SetInteger("TargetItem",itembgpointer-1);
                     ItemBG.animator.SetFloat("Direção",-1f);
-                    
-                    
-
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -182,8 +183,6 @@ public class Inventory : MonoBehaviour
                     selectedItem(+1);
                     ItemBG.animator.SetInteger("TargetItem", itembgpointer+1);
                     ItemBG.animator.SetFloat("Direção", 1f);
-                    
-
                 }
             }
             

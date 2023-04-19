@@ -32,7 +32,6 @@ public class ManagerScenes : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && SceneManager.GetActiveScene().name == "Dentro")
         {
             LoadScenes(cena);
