@@ -1202,7 +1202,7 @@ AnimatorStateTransition:
     m_ConditionEvent: TargetItem
     m_EventTreshold: 2
   - m_ConditionMode: 4
-    m_ConditionEvent: TargetItem
+    m_ConditionEvent: "Dire\xE7\xE3o"
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102016502825048910}
