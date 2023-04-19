@@ -10,12 +10,6 @@ public class QuestObjetivo
     public List<int> QuantAtual;
     public List<int> QuantRequerida;
     public List<int> idItem;
-    
-
-
-
-
-
 
 
     public bool completou()

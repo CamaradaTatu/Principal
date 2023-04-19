@@ -9,6 +9,7 @@ public class Construir : MonoBehaviour
     public Item[] items;
     public Animator animation;
     public GameObject fakeButton;
+    private Char pessoa;
 
     [Header("Requisitos")]
     public List<int> QuantAtual;
@@ -22,6 +23,7 @@ public class Construir : MonoBehaviour
     public void Awake()
     {
         items = GameObject.FindObjectsOfType<Item>();
+        pessoa = GetComponent<Char>();
     }
 
 
@@ -37,6 +39,7 @@ public class Construir : MonoBehaviour
             }
             else
             {
+                animation.Play("ISFentry");
                 r = false;
                 break;
             }
@@ -79,11 +82,24 @@ public class Construir : MonoBehaviour
         }
         QuantRequerida = itensNecessarios;
     }
-    public void aumentarMutiplicadorDeColeta()
+    public bool podeConstruir()
     {
+        bool v = false;
         if (itensSuficientes())
         {
             consumirItens(idAumento);
+            v = true;
+        }
+        else
+        {
+            v = false;
+        }
+        return v;
+    }
+    public void aumentarMutiplicadorDeColeta()
+    {
+        if (podeConstruir())
+        {
             for(int i = 0; i< items.Length; i++)
             {
                 if(items[i].id == idAumento)
@@ -95,13 +111,19 @@ public class Construir : MonoBehaviour
                 }
             }
         }
-        else {
-            animation.Play("ISFentry");
-        }
+        
     }
     public void Update()
     {
         ProgressoItens(QuantRequerida,idItem);
+    }
+
+    public void HabilitarGlicocalix()
+    {
+        if (podeConstruir())
+        {
+            pessoa.glicocalix = true;
+        }
     }
 
 }
