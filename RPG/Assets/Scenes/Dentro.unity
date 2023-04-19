@@ -820,6 +820,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.032319907, y: 0.07845031}
   m_Size: {x: 1.6530787, y: 3.7415442}
   m_Direction: 0
+--- !u!114 &229033847 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8678103473941825867, guid: 8c7a99f1b3a84a945923cd33015bf135,
+    type: 3}
+  m_PrefabInstance: {fileID: 229033841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229033842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db26290b03b164ba6cd589823ba70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &318048109 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7037615536058184871, guid: a88d73eae3854174094641175d58ddba,
@@ -10438,8 +10450,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 731477934}
-        m_MethodName: aumentarMutiplicadorDeColeta
+      - m_Target: {fileID: 229033847}
+        m_MethodName: HabilitarGlicocalix
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10691,7 +10703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &827221308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11107,7 +11119,7 @@ PrefabInstance:
     - target: {fileID: 5606947613471288085, guid: 8acfa04b7e42bb1498fb313b92786460,
         type: 3}
       propertyPath: m_Name
-      value: "Mitoc\xF4ndria Contru\xE7\xE3o (1)"
+      value: "Centr\xEDolo Constru\xE7\xE3o"
       objectReference: {fileID: 0}
     - target: {fileID: 5606947613471288075, guid: 8acfa04b7e42bb1498fb313b92786460,
         type: 3}

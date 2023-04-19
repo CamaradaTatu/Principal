@@ -193,11 +193,10 @@ MonoBehaviour:
       da c\xE9lula"
     tipo: 0
     value: 1
-  - name: "Prote\xEDna"
-    description: "A prote\xEDne serve para as mais diversas fun\xE7\xF5es da c\xE9lula,
-      deste uma participa\xE7\xE3o estrutural at\xE9 processos metab\xF3licos dentro
+  - name: "Lip\xEDdio"
+    description: "Os Lip\xEDdios servem principalmente na composi\xE7\xE3o estrutural
       da c\xE9lula"
-    tipo: 0
+    tipo: 3
     value: 1
   itemImages:
   - {fileID: 0}

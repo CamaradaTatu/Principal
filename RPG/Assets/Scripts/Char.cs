@@ -31,7 +31,11 @@ public class Char : MonoBehaviour
 
     void Start()
     {
-
+        
+    }
+    public void HabilitarGlicocalix()
+    {
+        glicocalix = true;
     }
     #region Moviment
     private void SetSpeedF(int speedF)
