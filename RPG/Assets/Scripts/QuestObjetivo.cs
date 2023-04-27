@@ -5,11 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class QuestObjetivo 
 {
+    public TipoObjetivo tipoObjetivo;
     public Inventory inventory;
-    
     public List<int> QuantAtual;
     public List<int> QuantRequerida;
     public List<int> idItem;
+    public KeyCode keyCode;
+
 
 
     public bool completou()
@@ -45,4 +47,9 @@ public class QuestObjetivo
         }
         QuantRequerida = itensNecessarios;
     }
+}
+public enum TipoObjetivo
+{
+    pressioneBotão,
+    Colete
 }

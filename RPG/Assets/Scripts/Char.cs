@@ -123,7 +123,17 @@ public class Char : MonoBehaviour
         }
         if (quest.isActive)
         {
-            quest.objetivo.ProgressoColeta(quest.objetivo.QuantRequerida, quest.objetivo.idItem);
+            if(quest.objetivo.tipoObjetivo == TipoObjetivo.Colete)
+            {
+                quest.objetivo.ProgressoColeta(quest.objetivo.QuantRequerida, quest.objetivo.idItem);
+            }
+            if(quest.objetivo.tipoObjetivo == TipoObjetivo.pressioneBotão && Input.GetKeyDown(quest.objetivo.keyCode))
+            {
+                for(int i = 0; i < quest.objetivo.QuantAtual.Count; i++)
+                {
+                    quest.objetivo.QuantAtual[i]++;
+                }
+            }
             if (quest.objetivo.completou() == true)
             {
                 quest.Completo();
