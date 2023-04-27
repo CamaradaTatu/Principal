@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 [System.Serializable]
 public class item
@@ -29,9 +30,11 @@ public class itemInInv
     public Sprite imagemDoItem;
 }
 
+
+
 public class Inventory : MonoBehaviour
 {
-
+    
     public List<item> ItemsDB = new List<item>();
     public List<ItemImage> itemImages = new List<ItemImage>();
 
@@ -42,7 +45,7 @@ public class Inventory : MonoBehaviour
     public GameObject invScene;
     public Text itens;
     public Text description;
-    public ItemBG ItemBG;
+    public ItemBG itemBG;
 
 
     private List<string> itensToShow = new List<string>();
@@ -53,7 +56,23 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         persoa = GetComponent<Char>();
-
+        for(int i = 0; i < GameManager.instance.playerItemsDB.Count; i++)
+        {
+            ItemsDB.Add(GameManager.instance.playerItemsDB[i]);
+        }
+        for (int i = 0; i < GameManager.instance.playerItemImages.Count; i++)
+        {
+            itemImages.Add(GameManager.instance.playerItemImages[i]);
+        }
+        for (int i = 0; i < GameManager.instance.playerItemInInv.Count; i++)
+        {
+            itemInInv.Add(GameManager.instance.playerItemInInv[i]);
+        }
+        invScene = GameObject.Find("Inventario");
+        itens = GameObject.Find("Itens").GetComponent<Text>();
+        description = GameObject.Find("Descricao").GetComponent<Text>();
+        itemBG = GameObject.Find("itemBG").GetComponent<ItemBG>();
+        invScene.SetActive(false);
     }
 
     public void addItem(int id, int count, int mutiplicador, Sprite imagem)
@@ -78,6 +97,7 @@ public class Inventory : MonoBehaviour
 
             itemInInv.Add(iii);
         }
+        
     }
 
     public void remItem(int id, int count)
@@ -165,15 +185,15 @@ public class Inventory : MonoBehaviour
         if (opened)
         {
             
-            int itembgpointer = ItemBG.animator.GetInteger("TargetItem");
+            int itembgpointer = itemBG.animator.GetInteger("TargetItem");
             
             if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                 if (selected > 0)
                 {
                     selectedItem(-1);
-                    ItemBG.animator.SetInteger("TargetItem",itembgpointer-1);
-                    ItemBG.animator.SetFloat("Direção",-1f);
+                    itemBG.animator.SetInteger("TargetItem",itembgpointer-1);
+                    itemBG.animator.SetFloat("Direção",-1f);
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -181,8 +201,8 @@ public class Inventory : MonoBehaviour
                 if (selected < itensToShow.Count-1)
                 {
                     selectedItem(+1);
-                    ItemBG.animator.SetInteger("TargetItem", itembgpointer+1);
-                    ItemBG.animator.SetFloat("Direção", 1f);
+                    itemBG.animator.SetInteger("TargetItem", itembgpointer+1);
+                    itemBG.animator.SetFloat("Direção", 1f);
                 }
             }
             
@@ -193,7 +213,7 @@ public class Inventory : MonoBehaviour
             reloadInv();
             opened = !opened;
         }
-
+        GameManager.instance.playerItemInInv = itemInInv;
     }
 
     public void selectedItem(int item)
