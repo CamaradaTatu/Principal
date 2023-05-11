@@ -610,21 +610,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.6938279
       objectReference: {fileID: 0}
-    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4984212384341796908, guid: 8c7a99f1b3a84a945923cd33015bf135,
         type: 3}
       propertyPath: invScene
@@ -680,6 +665,21 @@ PrefabInstance:
       propertyPath: itemImages.Array.data[2]
       value: 
       objectReference: {fileID: 1705962193}
+    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678103473941825871, guid: 8c7a99f1b3a84a945923cd33015bf135,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c7a99f1b3a84a945923cd33015bf135, type: 3}
 --- !u!1 &229033842 stripped
@@ -10504,16 +10504,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 2.4000244
       objectReference: {fileID: 0}
-    - target: {fileID: 7940720722760090943, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8251803695430486541, guid: a88d73eae3854174094641175d58ddba,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
-      objectReference: {fileID: 0}
     - target: {fileID: 8569870560598247760, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10523,6 +10513,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.040039062
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940720722760090943, guid: a88d73eae3854174094641175d58ddba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251803695430486541, guid: a88d73eae3854174094641175d58ddba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 2781779761017004466, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
@@ -10826,52 +10826,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047762702}
   m_CullTransparentMesh: 0
---- !u!1 &1070342540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1070342542}
-  - component: {fileID: 1070342541}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1070342541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070342540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b88f1e3f5d7874ebc969ab366005ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerItemsDB: []
-  playerItemImages: []
-  playerItemInInv: []
---- !u!4 &1070342542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070342540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0638311, y: 0.654079, z: 0.048857335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076178732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6067029453672889367, guid: a88d73eae3854174094641175d58ddba,
@@ -12343,6 +12297,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Caixa Bot\xE3o Constru\xE7\xE3o"
       objectReference: {fileID: 0}
+    - target: {fileID: 8746072267704736341, guid: 0a56349288790254ca87c9e0e191dba1,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 229033848}
+    - target: {fileID: 8746072267704736341, guid: 0a56349288790254ca87c9e0e191dba1,
+        type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 97003585}
     - target: {fileID: 6703493794964323420, guid: 0a56349288790254ca87c9e0e191dba1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12458,16 +12422,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.6271973
       objectReference: {fileID: 0}
-    - target: {fileID: 8746072267704736341, guid: 0a56349288790254ca87c9e0e191dba1,
-        type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 229033848}
-    - target: {fileID: 8746072267704736341, guid: 0a56349288790254ca87c9e0e191dba1,
-        type: 3}
-      propertyPath: animation
-      value: 
-      objectReference: {fileID: 97003585}
     - target: {fileID: 8746072269207148934, guid: 0a56349288790254ca87c9e0e191dba1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12482,7 +12436,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 229033848}
     - target: {fileID: 5426333241677577517, guid: 0a56349288790254ca87c9e0e191dba1,
         type: 3}
       propertyPath: m_AnchoredPosition.x

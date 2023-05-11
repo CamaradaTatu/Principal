@@ -55,19 +55,8 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        itemInInv = ArquivosDeTransferência.itemInInvs;
         persoa = GetComponent<Char>();
-        for(int i = 0; i < GameManager.instance.playerItemsDB.Count; i++)
-        {
-            ItemsDB.Add(GameManager.instance.playerItemsDB[i]);
-        }
-        for (int i = 0; i < GameManager.instance.playerItemImages.Count; i++)
-        {
-            itemImages.Add(GameManager.instance.playerItemImages[i]);
-        }
-        for (int i = 0; i < GameManager.instance.playerItemInInv.Count; i++)
-        {
-            itemInInv.Add(GameManager.instance.playerItemInInv[i]);
-        }
         invScene = GameObject.Find("Inventario");
         itens = GameObject.Find("Itens").GetComponent<Text>();
         description = GameObject.Find("Descricao").GetComponent<Text>();
@@ -213,7 +202,7 @@ public class Inventory : MonoBehaviour
             reloadInv();
             opened = !opened;
         }
-        GameManager.instance.playerItemInInv = itemInInv;
+        
     }
 
     public void selectedItem(int item)

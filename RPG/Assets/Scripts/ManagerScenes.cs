@@ -17,7 +17,7 @@ public class ManagerScenes : MonoBehaviour
     public void LoadScenes(string cena)
     {
         SceneManager.LoadScene(cena);
-        GameManager.instance.Save();
+       
     }
     public void LoadKey()
     {

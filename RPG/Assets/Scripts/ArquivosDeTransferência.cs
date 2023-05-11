@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ArquivosDeTransferência : MonoBehaviour
 {
-    private Inventory inv;
-    public static List<itemInInv> itemInInvs;
+    public static List<itemInInv> itemInInvs = new List<itemInInv>();
 
-    void Start()
-    {
-        inv = GameObject.FindObjectOfType<Char>().GetComponent<Inventory>();
-        itemInInvs = inv.itemInInv;
-    }
 }
