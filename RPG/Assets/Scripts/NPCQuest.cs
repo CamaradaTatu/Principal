@@ -17,15 +17,22 @@ public class NPCQuest : MonoBehaviour
     public void IniciarQuest()
     {
         quest.isActive = true;
-        texto.desc.text += "\n"+quest.Descrição;
-        MC.quest = quest;
-        MC.quest.objetivo = quest.objetivo;
+        texto.desc.text = quest.Descrição;
+        MC.quest = GetComponent<Quest>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == colisor && MC.glicocalix == false && !MC.quest.isActive)
+        if (collision == colisor && MC.quest != null)
+        {
+            if (!MC.quest.isActive)
+            {
+                IniciarQuest();
+            }
+        }
+        else if (MC.quest == null && collision == colisor)
         {
             IniciarQuest();
         }
+        
     }
 }

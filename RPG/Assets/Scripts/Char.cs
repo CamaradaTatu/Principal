@@ -18,6 +18,7 @@ public class Char : MonoBehaviour
     private Animator anim;
     public bool glicocalix;
     public Quest quest;
+    public ArquivosDeTransferência arquivos;
 
     public ManagerScenes ms;
     public string scene;
@@ -26,12 +27,13 @@ public class Char : MonoBehaviour
         
     {
         anim = GetComponent<Animator>();
+        arquivos = FindObjectOfType<ArquivosDeTransferência>();
     }
 
 
     void Start()
     {
-        
+        quest = arquivos.quest;
     }
     public void HabilitarGlicocalix()
     {
@@ -71,6 +73,8 @@ public class Char : MonoBehaviour
 
     private void Update()
     {
+        
+        
         if (canControl == true)
         {
             
@@ -121,29 +125,39 @@ public class Char : MonoBehaviour
                     SetSpeedL(0);
                 }
         }
-        if (quest.isActive)
+        #endregion
+        #region QuestRegion
+
+        if (quest != null)
         {
-            if(quest.objetivo.tipoObjetivo == TipoObjetivo.Colete)
+            arquivos.quest.objetivo = quest.objetivo;
+            arquivos.quest.OnQuestEnd = quest.OnQuestEnd;
+            arquivos.quest.Descrição = quest.Descrição;
+            arquivos.quest.isActive = quest.isActive;
+            arquivos.quest.titulo = quest.titulo;
+            arquivos.quest.textoQuest = quest.textoQuest;
+            arquivos.quest.npc = quest.npc;
+            if (quest.isActive)
             {
-                quest.objetivo.ProgressoColeta(quest.objetivo.QuantRequerida, quest.objetivo.idItem);
-            }
-            if(quest.objetivo.tipoObjetivo == TipoObjetivo.pressioneBotão && Input.GetKeyDown(quest.objetivo.keyCode))
-            {
-                for(int i = 0; i < quest.objetivo.QuantAtual.Count; i++)
+                if (quest.objetivo.tipoObjetivo == TipoObjetivo.Colete)
                 {
-                    quest.objetivo.QuantAtual[i]++;
+                    quest.objetivo.ProgressoColeta(quest.objetivo.QuantRequerida, quest.objetivo.idItem);
+                }
+                if (quest.objetivo.tipoObjetivo == TipoObjetivo.pressioneBotão && Input.GetKeyDown(quest.objetivo.keyCode))
+                {
+                    for (int i = 0; i < quest.objetivo.QuantAtual.Count; i++)
+                    {
+                        quest.objetivo.QuantAtual[i]++;
+                    }
+                }
+                if (quest.objetivo.completou() == true)
+                {
+                    quest.Completo();
                 }
             }
-            if (quest.objetivo.completou() == true)
-            {
-                quest.Completo();
-            }
         }
-        
-        
-    }
-    #endregion
+        #endregion
 
- 
+    }
 
 }

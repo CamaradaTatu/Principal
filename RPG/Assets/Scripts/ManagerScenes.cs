@@ -8,16 +8,18 @@ public class ManagerScenes : MonoBehaviour
     private Char Char;
     public float distance;
     public string cena;
+    
 
     private void Start()
     {
         Char = FindObjectOfType<Char>();
+        
     }
     //Carrega uma cena a partir do chamado da função e passagem do nome da cena como parâmetro
     public void LoadScenes(string cena)
     {
+        
         SceneManager.LoadScene(cena);
-       
     }
     public void LoadKey()
     {
