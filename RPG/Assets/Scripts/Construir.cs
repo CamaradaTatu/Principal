@@ -23,7 +23,7 @@ public class Construir : MonoBehaviour
     public void Awake()
     {
         items = GameObject.FindObjectsOfType<Item>();
-        pessoa = GetComponent<Char>();
+        pessoa = GameObject.FindObjectOfType<Char>();
     }
 
 
@@ -47,18 +47,22 @@ public class Construir : MonoBehaviour
         return r;
 
     }
-    public void consumirItens(int id)
+    public void consumirItens(List <int> id)
     {
         
         {
             bool t = false;
             for (int i = 0; i < inventory.itemInInv.Count; i++)
             {
-                if (inventory.itemInInv[i].id == id)
+                int idA = inventory.itemInInv[i].id;
+                for(int l = 0; l < QuantAtual.Count; l++)
                 {
-                    inventory.itemInInv[i].count -= QuantRequerida[i];
-                    t = true;
-                    break;
+                    if (idA == id[l])
+                    {
+                        inventory.itemInInv[i].count -= QuantRequerida[l];
+                        t = true;
+                        break;
+                    }
                 }
             }
             if (t == false)
@@ -87,7 +91,7 @@ public class Construir : MonoBehaviour
         bool v = false;
         if (itensSuficientes())
         {
-            consumirItens(idAumento);
+            consumirItens(idItem);
             v = true;
         }
         else
@@ -98,8 +102,7 @@ public class Construir : MonoBehaviour
     }
     public void aumentarMutiplicadorDeColeta()
     {
-        if (podeConstruir())
-        {
+
             for(int i = 0; i< items.Length; i++)
             {
                 if(items[i].id == idAumento)
@@ -110,7 +113,6 @@ public class Construir : MonoBehaviour
                     fakeButton.SetActive(true);
                 }
             }
-        }
         
     }
     public void Update()
@@ -119,10 +121,14 @@ public class Construir : MonoBehaviour
     }
 
     public void HabilitarGlicocalix()
+    {        
+            pessoa.glicocalix = true;        
+    }
+    public void GastarConstruir()
     {
         if (podeConstruir())
         {
-            pessoa.glicocalix = true;
+            Debug.Log("proximo");
         }
     }
 
