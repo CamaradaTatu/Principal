@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dentro.unity
+    path: Assets/Resources/Scenes/Dentro.unity
     guid: 782940d6bb9634c41aadb739bd2f00e8
   - enabled: 1
-    path: Assets/Scenes/Organismo.unity
+    path: Assets/Resources/Scenes/Organismo.unity
     guid: 5b5d166137bb34841bb943714d58a58c
   m_configObjects: {}

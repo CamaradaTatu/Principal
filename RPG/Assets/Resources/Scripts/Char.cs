@@ -16,28 +16,42 @@ public class Char : MonoBehaviour
     private Vector3 goTo = new Vector3(0, 0, -10);
 
     private Animator anim;
+    private Transform transformSave;
     public bool glicocalix;
     public Quest quest;
-    public ArquivosDeTransferência arquivos;
 
     public ManagerScenes ms;
     public string scene;
 
-    private void Awake()
-        
+
+    private void Awake()       
     {
         anim = GetComponent<Animator>();
-        arquivos = FindObjectOfType<ArquivosDeTransferência>();
+        transformSave = GameObject.Find("TransformTpSave").GetComponent<Transform>();
     }
 
 
     void Start()
     {
-        quest = arquivos.quest;
+
     }
     public void HabilitarGlicocalix()
     {
         glicocalix = true;
+    }
+    public void trocarAnimadores()
+    {
+        if (scene == "Dentro")
+        {
+            anim.runtimeAnimatorController = Resources.Load("Animations/McAnim/MC Celula") as RuntimeAnimatorController;
+            transform.position = transformSave.position;            
+        }
+        else if (scene == "Organismo")
+        {
+            anim.runtimeAnimatorController = Resources.Load("Animations/McAnim/MC") as RuntimeAnimatorController;
+            transformSave.position = transform.position;
+            transform.position = ms.transform.position;
+        }
     }
     #region Moviment
     private void SetSpeedF(int speedF)
@@ -69,37 +83,36 @@ public class Char : MonoBehaviour
     {
         canControl = true;
     }
+    
 
 
     private void Update()
     {
         
-        
         if (canControl == true)
         {
-            
 
-                float x = Input.GetAxisRaw("Horizontal");
-                float y = Input.GetAxisRaw("Vertical");
-                if (y == 1)//w
+                 if (Input.GetKey(KeyCode.W))//w
                 {
+                    SetSpeedF(0);
                     transform.position += new Vector3(0, Speed, 0);
                     SetSpeedB(1);
                 }
 
-                else if (x == 1) //D
+                else if (Input.GetKey(KeyCode.D)) //D
                 {
+                    SetSpeedL(0);
                     transform.position += new Vector3(Speed, 0, 0);
                     SetSpeedR(1);
                 }
 
-                else if (y == -1) //S
+                else if (Input.GetKey(KeyCode.S)) //S
                 {
                     transform.position += new Vector3(0, -Speed, 0);
                     SetSpeedF(1);
                 }
 
-                else if (x == -1) //A
+                else if (Input.GetKey(KeyCode.A)) //A
                 {
                     transform.position += new Vector3(-Speed, 0, 0);
                     SetSpeedL(1);
@@ -107,21 +120,25 @@ public class Char : MonoBehaviour
 
                 if (Input.GetKeyUp(KeyCode.W))//w
                 {
+                    transform.position += new Vector3(0,0,0);
                     SetSpeedB(0);
                 }
 
                 else if (Input.GetKeyUp(KeyCode.D)) //D
                 {
-                    SetSpeedR(0);
+                    transform.position += new Vector3(0,0,0);
+                    SetSpeedR(0);    
                 }
 
                 else if (Input.GetKeyUp(KeyCode.S)) //S
                 {
+                    transform.position += new Vector3(0,0,0);                   
                     SetSpeedF(0);
                 }
 
                 else if (Input.GetKeyUp(KeyCode.A)) //A
                 {
+                    transform.position += new Vector3(0,0,0);                    
                     SetSpeedL(0);
                 }
         }
@@ -130,13 +147,6 @@ public class Char : MonoBehaviour
 
         if (quest != null)
         {
-            arquivos.quest.objetivo = quest.objetivo;
-            arquivos.quest.OnQuestEnd = quest.OnQuestEnd;
-            arquivos.quest.Descrição = quest.Descrição;
-            arquivos.quest.isActive = quest.isActive;
-            arquivos.quest.titulo = quest.titulo;
-            arquivos.quest.textoQuest = quest.textoQuest;
-            arquivos.quest.npc = quest.npc;
             if (quest.isActive)
             {
                 if (quest.objetivo.tipoObjetivo == TipoObjetivo.Colete)

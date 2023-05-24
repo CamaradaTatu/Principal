@@ -28,6 +28,7 @@ public class Quest : MonoBehaviour
         isActive = false;
         npc.condição = true;
         OnQuestEnd.Invoke();
+        Destroy(this);
         Debug.Log(titulo + "completo");
     }
 }

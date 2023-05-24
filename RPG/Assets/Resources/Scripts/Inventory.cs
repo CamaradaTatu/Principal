@@ -55,7 +55,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        itemInInv = ArquivosDeTransferência.itemInInvs;
         persoa = GetComponent<Char>();
         invScene = GameObject.Find("Inventario");
         itens = GameObject.Find("Itens").GetComponent<Text>();

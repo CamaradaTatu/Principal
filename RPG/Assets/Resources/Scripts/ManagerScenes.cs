@@ -8,6 +8,7 @@ public class ManagerScenes : MonoBehaviour
     private Char Char;
     public float distance;
     public string cena;
+
     
 
     private void Start()
@@ -16,18 +17,7 @@ public class ManagerScenes : MonoBehaviour
         
     }
     //Carrega uma cena a partir do chamado da função e passagem do nome da cena como parâmetro
-    public void LoadScenes(string cena)
-    {
-        
-        SceneManager.LoadScene(cena);
-    }
-    public void LoadKey()
-    {
 
-        {
-            LoadScenes(cena);
-        }
-    }
     public void Quit()
     {
         Application.Quit();
@@ -35,13 +25,15 @@ public class ManagerScenes : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && SceneManager.GetActiveScene().name == "Dentro")
+        if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && Char.scene == "Dentro")
         {
-            LoadScenes(cena);
+            Char.trocarAnimadores();
+            Char.scene = "Organismo";
         }
-        if (Input.GetKeyDown(KeyCode.E) && SceneManager.GetActiveScene().name == "Organismo")
+        else if (Input.GetKeyDown(KeyCode.E) && Char.scene == "Organismo")
         {
-            LoadScenes(cena);
+            Char.trocarAnimadores();
+            Char.scene = "Dentro";
         }
     }
 }
