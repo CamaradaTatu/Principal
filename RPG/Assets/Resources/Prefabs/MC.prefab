@@ -221,4 +221,4 @@ MonoBehaviour:
   invScene: {fileID: 0}
   itens: {fileID: 0}
   description: {fileID: 0}
-  ItemBG: {fileID: 0}
+  itemBG: {fileID: 0}

@@ -48,4 +48,8 @@ public class NPC : MonoBehaviour
             OnDialogueEnd.Invoke();
         }
     }
+    public void setCondicaoTrue()
+    {
+        condição = true;
+    }
 }
