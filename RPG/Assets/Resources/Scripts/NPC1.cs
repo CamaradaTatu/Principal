@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class NPC : MonoBehaviour
+public class NPC1 : MonoBehaviour
 {
     [Header("EnemyConfig")]
     
@@ -37,7 +37,7 @@ public class NPC : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            dialogue.npc = this;
+            dialogue.nPC1 = this;
         }
         if (condição == true)
         {
