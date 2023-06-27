@@ -1606,7 +1606,6 @@ GameObject:
   - component: {fileID: 8392489913337825151}
   - component: {fileID: 8392489913337825150}
   - component: {fileID: 8392489913337825149}
-  - component: {fileID: 8392489913337825148}
   m_Layer: 0
   m_Name: Celula#1
   m_TagString: Untagged
@@ -1822,27 +1821,6 @@ MonoBehaviour:
     idItem: 0000000001000000
     keyCode: 0
   isActive: 1
---- !u!114 &8392489913337825148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392489913337825147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 410aed476d4ea264caf36ed75d5eb72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  "condi\xE7\xE3o": 0
-  dialogue: {fileID: 0}
-  falas: []
-  OnDialogueEnd:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &8392489913380282291
 GameObject:
   m_ObjectHideFlags: 0

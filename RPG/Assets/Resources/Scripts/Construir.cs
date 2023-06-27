@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Construir : MonoBehaviour
@@ -10,6 +11,7 @@ public class Construir : MonoBehaviour
     public Animator animation;
     public GameObject fakeButton;
     private Char pessoa;
+    public UnityEvent onConstruction;
 
     [Header("Requisitos")]
     public List<int> QuantAtual;
@@ -129,6 +131,11 @@ public class Construir : MonoBehaviour
         if (podeConstruir())
         {
             Debug.Log("proximo");
+            onConstruction.Invoke();
+        }
+        else
+        {
+            Debug.Log("ISF");
         }
     }
 

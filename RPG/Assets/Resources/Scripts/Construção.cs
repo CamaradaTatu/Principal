@@ -19,6 +19,7 @@ public class Construção : MonoBehaviour
         if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && !telaConstrução.activeSelf)
         {
             telaConstrução.SetActive(true);
+            Char.DisableControls();
         }
     }
 }
