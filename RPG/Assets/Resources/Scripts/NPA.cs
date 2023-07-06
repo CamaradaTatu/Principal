@@ -14,7 +14,7 @@ public class NPA : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        animator.Play("");
+        animator.Play("NPAentry");
     }
 
 }
