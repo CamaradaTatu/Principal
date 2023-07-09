@@ -2155,7 +2155,7 @@ PrefabInstance:
     - target: {fileID: 6067029453672889367, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4636281994570734471, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
@@ -3604,6 +3604,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.099853516
       objectReference: {fileID: 0}
+    - target: {fileID: 224966514225032204, guid: a88d73eae3854174094641175d58ddba,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1598014817}
+    - target: {fileID: 224966514225032204, guid: a88d73eae3854174094641175d58ddba,
+        type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 2041670071}
     - target: {fileID: 2986433628739559676, guid: a88d73eae3854174094641175d58ddba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5507,6 +5517,18 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1361575040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8392489913111675632, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+    type: 3}
+  m_PrefabInstance: {fileID: 8392489913174807419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca5de7b571d63349803da7a86056eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1362219795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5567,6 +5589,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8392489913174807419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1413160683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413160682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410aed476d4ea264caf36ed75d5eb72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Celula#3
+  "condi\xE7\xE3o": 0
+  dialogue: {fileID: 1703602545}
+  falas: []
+  OnDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1413160686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+    type: 3}
+  m_PrefabInstance: {fileID: 8392489913174807419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413160682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6bf8569487bc4479d8c480d80bb8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1413160687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8392489912470803179, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+    type: 3}
+  m_PrefabInstance: {fileID: 8392489913174807419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413160682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5857f0eeabaa112489c9cb76b0c2e15b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415877398 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2469824059951646235, guid: a88d73eae3854174094641175d58ddba,
@@ -39052,6 +39119,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: falas.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1703602545}
@@ -39066,6 +39141,22 @@ PrefabInstance:
     - target: {fileID: 0}
       propertyPath: falas.Array.data[0]
       value: "Voc\xEA ainda n\xE3o \xE9 capaz de comunicar-se com outra c\xE9lula!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1703602545}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Celula#3
       objectReference: {fileID: 0}
     - target: {fileID: 8392489911828980073, guid: ee9035a40836a5b4083f5e14f6f7cf88,
         type: 3}
@@ -39369,9 +39460,79 @@ PrefabInstance:
       objectReference: {fileID: 161003630}
     - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
         type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: falas.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 1703602545}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: name
+      value: Celula#3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: falas.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: falas.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: falas.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: falas.Array.data[0]
+      value: Em desenvolvimento.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1361575040}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Completo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803188, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: OnQuestEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: objetivo.QuantAtual.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: objetivo.QuantRequerida.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: objetivo.idItem.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
         type: 3}
       propertyPath: textoQuest
@@ -39382,11 +39543,41 @@ PrefabInstance:
       propertyPath: objetivo.inventory
       value: 
       objectReference: {fileID: 1598014817}
-    - target: {fileID: 8392489912470803190, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
         type: 3}
-      propertyPath: dialogue
+      propertyPath: titulo
       value: 
-      objectReference: {fileID: 1703602545}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: "Descri\xE7\xE3o"
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: objetivo.tipoObjetivo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: nPC
+      value: 
+      objectReference: {fileID: 1413160687}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 1413160686}
+    - target: {fileID: 8392489912470803189, guid: ee9035a40836a5b4083f5e14f6f7cf88,
+        type: 3}
+      propertyPath: objetivo.QuantRequerida.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8392489912504858723, guid: ee9035a40836a5b4083f5e14f6f7cf88,
         type: 3}
       propertyPath: textoQuest
@@ -40147,11 +40338,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8392489912470803176, guid: ee9035a40836a5b4083f5e14f6f7cf88,
-        type: 3}
-      propertyPath: dialogue
-      value: 
-      objectReference: {fileID: 1703602545}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9035a40836a5b4083f5e14f6f7cf88, type: 3}
 --- !u!1001 &8933389838273986574
