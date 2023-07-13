@@ -29,13 +29,13 @@ public class ManagerScenes : MonoBehaviour
     {
         if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && Char.scene == "Dentro")
         {
-            Char.trocarAnimadores();
+            StartCoroutine(Char.trocarAnimadores());
             Char.scene = "Organismo";
             onOrganismEnter.Invoke();
         }
         else if (Input.GetKeyDown(KeyCode.E) && Char.scene == "Organismo")
         {
-            Char.trocarAnimadores();
+            StartCoroutine(Char.trocarAnimadores());
             Char.scene = "Dentro";
             onCellEnter.Invoke();
         }

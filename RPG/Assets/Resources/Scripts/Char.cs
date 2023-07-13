@@ -39,10 +39,12 @@ public class Char : MonoBehaviour
     {
         glicocalix = true;
     }
-    public void trocarAnimadores()
+    public IEnumerator trocarAnimadores()
     {
         if (scene == "Dentro")
         {
+            anim.Play("TP");
+            yield return new WaitForSeconds(2);
             anim.runtimeAnimatorController = Resources.Load("Animations/McAnim/MC Celula") as RuntimeAnimatorController;
             transform.position = transformSave.position;            
         }
@@ -51,6 +53,8 @@ public class Char : MonoBehaviour
             anim.runtimeAnimatorController = Resources.Load("Animations/McAnim/MC") as RuntimeAnimatorController;
             transformSave.position = transform.position;
             transform.position = ms.transform.position;
+            anim.Play("TPinvertido");
+            yield return new WaitForSeconds(2);
         }
     }
     #region Moviment
