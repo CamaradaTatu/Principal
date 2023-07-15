@@ -13,11 +13,20 @@ public class Char : MonoBehaviour
     public TextoQuest texto;
     private bool canControl = true;
 
+    [Header("Audios")]
+    public AudioClip orgBG;
+    public AudioClip cellBG;
+    public AudioClip itemColetado;
+    public AudioClip ISF;
+    public AudioClip Construído;
+    public AudioManager backgroundAudio;
+    public AudioManager audioManager;
+    
+
     private Vector3 goTo = new Vector3(0, 0, -10);
 
     private Animator anim;
     private Transform transformSave;
-    public bool glicocalix;
     public Quest quest;
 
     public ManagerScenes ms;
@@ -26,6 +35,7 @@ public class Char : MonoBehaviour
 
     private void Awake()       
     {
+        audioManager = GetComponent<AudioManager>();
         anim = GetComponent<Animator>();
         transformSave = GameObject.Find("TransformTpSave").GetComponent<Transform>();
     }
@@ -35,18 +45,18 @@ public class Char : MonoBehaviour
     {
 
     }
-    public void HabilitarGlicocalix()
-    {
-        glicocalix = true;
-    }
+
     public IEnumerator trocarAnimadores()
     {
         if (scene == "Dentro")
         {
             anim.Play("TP");
+            DisableControls();
             yield return new WaitForSeconds(2);
             anim.runtimeAnimatorController = Resources.Load("Animations/McAnim/MC Celula") as RuntimeAnimatorController;
-            transform.position = transformSave.position;            
+            EnableControls();
+            transform.position = transformSave.position;
+            backgroundAudio.PlayAudio(orgBG);
         }
         else if (scene == "Organismo")
         {
@@ -54,7 +64,11 @@ public class Char : MonoBehaviour
             transformSave.position = transform.position;
             transform.position = ms.transform.position;
             anim.Play("TPinvertido");
+            backgroundAudio.PlayAudio(cellBG);
+            DisableControls();
             yield return new WaitForSeconds(2);
+            EnableControls();
+            
         }
     }
     #region Moviment

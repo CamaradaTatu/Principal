@@ -32,6 +32,7 @@ public class Item : MonoBehaviour
         {
 
             inv.addItem(id, count, mutiplicador, imagemDoItem);
+            Char.audioManager.PlayAudio(Char.itemColetado);
             Destroy(gameObject);            
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -15,11 +15,5 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = clip;
         audioSource.Play();
-    }
-
-    public void PlayAudioAtPoint(Vector2 audioPosition, AudioClip clip)
-    {
-        Vector3 newAudioPos = new Vector3(audioPosition.x, audioPosition.y, Camera.main.transform.position.z);
-        AudioSource.PlayClipAtPoint(clip, newAudioPos);
     }
 }

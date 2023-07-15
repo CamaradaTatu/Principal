@@ -52,9 +52,13 @@ public class Inventory : MonoBehaviour
     private int selected;
     bool opened;
     private Char persoa;
+    private AudioManager audioManager;
+    public AudioClip abriu;
+    public AudioClip seleção;
 
     private void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         persoa = GetComponent<Char>();
         invScene = GameObject.Find("Inventario");
         itens = GameObject.Find("Itens").GetComponent<Text>();
@@ -149,6 +153,7 @@ public class Inventory : MonoBehaviour
             itensToShow.Clear();
             selected = 0;
             invScene.SetActive(true);
+            audioManager.PlayAudio(abriu);
             persoa.DisableControls();
             for (int i = 0; i < itemInInv.Count; i++)
             {
@@ -182,6 +187,7 @@ public class Inventory : MonoBehaviour
                     selectedItem(-1);
                     itemBG.animator.SetInteger("TargetItem",itembgpointer-1);
                     itemBG.animator.SetFloat("Direção",-1f);
+                    audioManager.PlayAudio(seleção);
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -191,6 +197,7 @@ public class Inventory : MonoBehaviour
                     selectedItem(+1);
                     itemBG.animator.SetInteger("TargetItem", itembgpointer+1);
                     itemBG.animator.SetFloat("Direção", 1f);
+                    audioManager.PlayAudio(seleção);
                 }
             }
             

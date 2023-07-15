@@ -42,6 +42,7 @@ public class Construir : MonoBehaviour
             else
             {
                 animation.Play("ISFentry");
+                pessoa.audioManager.PlayAudio(pessoa.ISF);
                 r = false;
                 break;
             }
@@ -122,15 +123,13 @@ public class Construir : MonoBehaviour
         ProgressoItens(QuantRequerida,idItem);
     }
 
-    public void HabilitarGlicocalix()
-    {        
-            pessoa.glicocalix = true;        
-    }
+
     public void GastarConstruir()
     {
         if (podeConstruir())
         {
             Debug.Log("proximo");
+            pessoa.audioManager.PlayAudio(pessoa.Construído);
             onConstruction.Invoke();
         }
         else

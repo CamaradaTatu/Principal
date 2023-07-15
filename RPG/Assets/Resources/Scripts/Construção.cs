@@ -5,7 +5,7 @@ using UnityEngine;
 public class Construção : MonoBehaviour
 {
     private Char Char;
-    private bool podeAbrir;
+    private bool podeAbrir = true;
     public GameObject telaConstrução;
 
     [SerializeField]
