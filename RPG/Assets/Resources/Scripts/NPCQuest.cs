@@ -20,7 +20,7 @@ public class NPCQuest : MonoBehaviour
         texto.desc.text = quest.Descrição;
         MC.quest = GetComponent<Quest>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision == colisor && MC.quest != null)
         {
