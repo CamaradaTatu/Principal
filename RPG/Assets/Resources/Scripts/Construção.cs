@@ -12,8 +12,9 @@ public class Construção : MonoBehaviour
     public float distance;
     public TextoQuest t;
     public string txt;
-    private float distanceInicial = 1.5f;
-    
+
+    private bool missaoConcluida = false; // Variável para indicar se a missão foi concluída
+
     private void Start()
     {
         Char = FindObjectOfType<Char>();
@@ -21,26 +22,35 @@ public class Construção : MonoBehaviour
 
     void Update()
     {
-
-        if (Vector2.Distance(Char.transform.position, transform.position) < distance)
+        if (Vector2.Distance(Char.transform.position, transform.position) < distance && podeAbrir)
         {
             t.desc.text = txt;
-
         }
-
-        if (Vector2.Distance(Char.transform.position, transform.position) < distance && Input.GetKeyDown(KeyCode.E) && !telaConstrução.activeSelf && podeAbrir)
+        if (Vector2.Distance(Char.transform.position, transform.position) < distance
+            && Input.GetKeyDown(KeyCode.E)
+            && !telaConstrução.activeSelf
+            && podeAbrir
+            && !GetMissao()) // Verifica se a missão não está concluída
         {
-            distance = 0;
+            
             telaConstrução.SetActive(true);
             Char.DisableControls();
         }
-     
     }
 
     public void SetPodeAbrirTrue()
     {
         podeAbrir = true;
     }
-    
 
+    // Método para definir o estado da missão
+    public void SetMissaoConcluida(bool concluida)
+    {
+        distance = 0;
+        missaoConcluida = concluida;
+    }
+    public bool GetMissao()
+    {
+        return missaoConcluida;
+    }
 }

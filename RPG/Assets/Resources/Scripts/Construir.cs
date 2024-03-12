@@ -22,6 +22,7 @@ public class Construir : MonoBehaviour
     public int aumento;
     public int idAumento;
 
+
     public void Awake()
     {
         items = GameObject.FindObjectsOfType<Item>();
@@ -96,6 +97,7 @@ public class Construir : MonoBehaviour
         {
             consumirItens(idItem);
             v = true;
+
         }
         else
         {
@@ -138,4 +140,5 @@ public class Construir : MonoBehaviour
         }
     }
 
+  
 }
